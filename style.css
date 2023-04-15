@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+
+:root {
+  --red: #f65351;
+  --blue: #0a317b;
+  --white: #fff;
+  --very-light-grayish-blue: #f7fafd;
+  --light-grayish-blue-1: #e5effa;
+  --light-grayish-blue-2: #dde7ee;
+  --grayish-blue: #939dae;
+  --dark-grayish-blue: #5e6778;
+  --very-dark-blue: #1c202b;
+
+  --bolded: 800;
+  --regular: 500;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  background-color: var(--white);
+  padding: 2.5em 1.7em;
+}
+
+.title,
+.notification-user-name {
+  color: var(--very-dark-blue);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.4em;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.title span {
+  font-size: 1.6rem;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 0.2em 0.8em;
+  margin-left: 0.625em;
+  border-radius: 0.3125em;
+}
+
+.mark-as-read-btn {
+  background-color: transparent;
+  border: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.4rem;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+  transition: color 50ms;
+}
+
+.mark-as-read-btn:hover {
+  color: var(--grayish-blue);
+}
+
+.mark-as-read-btn:active {
+  color: var(--blue);
+}
+
+.notification-item {
+  padding: 1.4em 1.6em;
+  display: flex;
+  gap: 1.2em;
+  align-items: flex-start;
+}
+
+.notification-item:not(:last-of-type) {
+  margin-bottom: 1.3em;
+}
+
+.notification-item.unread-item {
+  background-color: var(--very-light-grayish-blue);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.notification-item.unread-item .notification::after {
+  content: "•";
+  font-size: 1.3rem;
+  vertical-align: middle;
+  margin-left: 0.5em;
+  color: var(--red);
+  position: relative;
+  top: -2.5px;
+}
+
+.avatar-image {
+  max-width: 4rem;
+  height: auto;
+}
+
+.notification {
+  font-size: 1.4rem;
+  margin-bottom: 0.22em;
+}
+
+.notification-user-name {
+  cursor: pointer;
+  margin-right: 0.5em;
+  transition: 100ms ease-in-out;
+}
+
+.notification-user-name:hover {
+  color: var(--blue);
+}
+
+.notification .notification-summary {
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+  margin-right: 0.5em;
+}
+
+.notification .bolded {
+  font-weight: 800;
+  color: var(--dark-grayish-blue);
+  transition: 100ms ease-in-out;
+}
+
+.notification .bolded:hover {
+  color: var(--blue);
+}
+
+.notification .bolded.blue-text {
+  color: var(--blue);
+}
+
+.timeline {
+  font-size: 1.4rem;
+  color: var(--grayish-blue);
+}
+
+.private-message {
+  font-size: 1.4rem;
+  color: var(--dark-grayish-blue);
+  margin-top: 0.93em;
+  padding: 1.4em 1.1em;
+  border: 1px solid var(--light-grayish-blue-2);
+  border-radius: 0.3em;
+  line-height: 130%;
+  transition: background 100ms;
+}
+
+.private-message:hover,
+.private-message:active {
+  background-color: var(--light-grayish-blue-1);
+}
+
+.post-link {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-img {
+  max-width: 4rem;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2em;
+    background-color: var(--very-light-grayish-blue);
+  }
+
+  main {
+    box-shadow: 1px 17px 39px rgba(0, 0, 0, 0.04);
+    border-radius: 1.5em;
+    padding: 2em 3.2em;
+    width: clamp(40rem, 100%, 73.1rem);
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .mark-as-read-btn {
+    font-size: 1.6rem;
+  }
+
+  .notification-item {
+    gap: 1.9em;
+  }
+
+  .notification-item:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
+
+  .avatar-image,
+  .post-img {
+    max-width: 4.5rem;
+  }
+
+  .notification {
+    font-size: 1.6rem;
+  }
+
+  .timeline {
+    font-size: 1.6rem;
+  }
+
+  .private-message {
+    font-size: 1.6rem;
+  }
+
+  .notification-item.unread-item .notification::after {
+    font-size: 1.6rem;
+  }
+}
