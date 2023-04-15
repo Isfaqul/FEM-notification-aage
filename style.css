@@ -230,5 +230,6 @@ main {
 
   .notification-item.unread-item .notification::after {
     font-size: 1.6rem;
+    line-height: 100%;
   }
 }
